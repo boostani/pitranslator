@@ -1,0 +1,65 @@
+body, tr {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif, Goudy Old Style,Garamond,Big Caslon,Verdana;
+    font-size: 14px;
+}
+#parent {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+#parent td {
+ vertical-align: text-top;
+     padding:0; margin:0;
+}
+#translator {
+ background-color:#65C5DC;
+ padding: 40px 50px;
+}
+h1, h2 {
+  font-weight: 300;  
+}
+.white {
+    color: #ffffff;   
+}
+.input{
+    height: 30px;
+    font-size: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 90%;
+    margin-bottom: 20px;
+    
+}
+#translate {
+    background-color: #05A0C6;
+    padding: 10px;
+    font-size: 18px;
+    color: #ffffff;
+    box-shadow: none;
+    border: none;
+    border-radius: 8px;
+}
+
+#result {
+    background-color: #f0f0f0; 
+    color: #666666;
+    padding: 20px 25px;
+    border-radius: 5px;
+    margin-top: 8px;
+    width: 90%;
+    
+}
+#instruction {
+     background-color: #f0f0f0; 
+}
+.label {
+    width: 120px;
+    display: inline-block;
+    margin-bottom: 5px;
+}

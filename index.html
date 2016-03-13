@@ -2,16 +2,61 @@
 <html xmlns:ng="http://angularjs.org" ng-app="translator">
 <head>
     <title>Lambda - Pi Translator </title>
-    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="css/style.css">
     
-    <script type="text/javascript" src="angular.js"></script>
-    <script type="text/javascript" src="module.js"></script>
-    <script type="text/javascript" src="controller.js"></script>
+    <script type="text/javascript" src="js/angular.js"></script>
+    <script type="text/javascript" src="js/controller.js"></script>
+
 </head>
 <body  ng-controller="main">
-    
-    <input type="text" ng-model="formula"/>
+<table width="100%" id="parent">
+    <tr>
+    <td width="50%" id="translator">
+     <div style="padding: 90px;">
+    <form>
+        <h1 class="white">Lambda to Pi Translator</h1>
+        <input type="text" name="formula" id="lambdaInput" class="input" placeholder="Enter your lambda expression"/>
+        <button ng-click="setLambda()" id="translate">Translate</button>
+    </form>
     <div>{{lambdaval}}</div>
+         <div style="margin-top: 40px" class="white">Result</div>
+         <div id="result">{{output}}</div>
+    </div>
+    </div>
+    </td>
+    <td id="instruction">
+        <div style="padding: 70px">
+            <h2>Instructions</h2>
+            <ul>
+                <li>For ease of user, type capital L instead of &lambda; (e.g. Lx.xy)</li>
+                <li>You may use prantheses if you want the expression to get process in any specific way.</li>
+                <li>Do not use space in your expression</li>
+                <li>Please make sure to type a valid lambda expression. Lambda validator is not implemented in this version.</li>
+            </ul>
+            <h2>Process</h2>
+            <ul>
+                <li>The translator analys the expression and disambiguate it. For example, you may enter Lx.yzx and it would update it to Lx.(yz)x.</li>
+                
+                <li>After analysing the expression, the following rules will be used to translate the expression:<br/><br/>
+                    <div>
+                        <div class="label">M: </div>[M](p)
+                    </div>
+                    <div>
+                        <div class="label">x</div>x!p
+                    </div>
+                    <div>
+                        <div class="label">&lambda;x M</div>[&lambda;x M](p) = p?x.p?q.[M](q)
+                    </div>
+                    <div>
+                        <div class="label">MN</div>[M N](p) = new(a).new(b).(([M](a))|(a!b.a!p)|*((b?c).[N](c))
+                    </div>
+                </li>
+            </ul>
+            
+        </div>
+    </td>
+    </tr>
+</table>
     
 
 </body>
